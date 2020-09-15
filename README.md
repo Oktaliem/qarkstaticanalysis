@@ -11,7 +11,7 @@ Please follow this repository https://github.com/linkedin/qark for QARK installa
 
 ## How to run static analysis via Maven and Junit
 ```
-Download this repository and run these below syntax
+Download this repository and run this syntax
 
 $ mvn clean test -Dtest=QarkScannerTest#scanner -Dtype=${file_type} -Dpath=${path_to_apk or path_to_java_source_code}
 
@@ -24,7 +24,7 @@ $ mvn clean test -Dtest=QarkScannerTest#scanner -Dtype=apk -Dpath=/home/okta/Doc
 
 ## Run static analysis via executable jar
 ```
-Download this repository and run these below syntax
+Download this repository and run this syntax
 
 $ java -jar qarkstaticanalysis-1.0-SNAPSHOT.jar [file_type] [path_to_apk or path_to_java_source_code]
 
