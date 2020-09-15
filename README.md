@@ -40,4 +40,7 @@ $ java -jar qarkstaticanalysis-1.0-SNAPSHOT.jar java /home/okta/Documents/GitHub
 {your_project_path or your_jar_folder}/report.html
 ```
 
-
+## How to create executable jar
+```
+$ mvn clean package -Dtest=QarkScannerTest#scanner -Dtype=apk -Dpath=/home/okta/Documents/GitHub/qarkstaticanalysis/src/main/resources/goatdroid.apk
+```
