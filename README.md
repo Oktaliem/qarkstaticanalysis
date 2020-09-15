@@ -9,18 +9,35 @@ Static Analysis for Java source code and Android APK using QARK via Maven and Ju
 Please follow this repository https://github.com/linkedin/qark for QARK installation.
 
 
-## How to run the test
+## How to run static analysis via Maven and Junit
 ```
+Download this repository and run these below syntax
+
+$ mvn clean test -Dtest=QarkScannerTest#scanner -Dtype=${file_type} -Dpath=${path_to_apk or path_to_java_source_code}
+
 Sample for Java source code
-$ mvn clean test -Dtest=QarkScannerTest#scanner -Dtype=java -Dpath=/home/okta/Documents/GitHub/testdatabuilderfortesting/src/main/java/
+$ mvn clean test -Dtest=QarkScannerTest#scanner -Dtype=java -Dpath=/home/okta/Documents/GitHub/qarkstaticanalysis/src/main/java/
 
 Sample for Android APK
 $ mvn clean test -Dtest=QarkScannerTest#scanner -Dtype=apk -Dpath=/home/okta/Documents/GitHub/qarkstaticanalysis/src/main/resources/goatdroid.apk
 ```
 
+## Run static analysis via executable jar
+```
+Download this repository and run these below syntax
+
+$ java -jar qarkstaticanalysis-1.0-SNAPSHOT.jar [file_type] [path_to_apk or path_to_java_source_code]
+
+Sample for Android APK
+$ java -jar qarkstaticanalysis-1.0-SNAPSHOT.jar apk /home/okta/Documents/GitHub/qarkstaticanalysis/src/main/resources/goatdroid.apk
+
+Sample for Java source code
+$ java -jar qarkstaticanalysis-1.0-SNAPSHOT.jar java /home/okta/Documents/GitHub/qarkstaticanalysis/src/main/java/
+```
+
 ## HTML Report
 ```
-{your_project_path}/target/report.html
+{your_project_path or your_jar_folder}/report.html
 ```
 
 

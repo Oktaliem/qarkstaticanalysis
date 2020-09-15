@@ -6,17 +6,19 @@ import java.io.InputStreamReader;
 
 public class QarkScanner {
 
-    public void qarkScan(String path) throws IOException {
+    public void qarkScan(String type, String path) throws IOException {
         Process process = null;
-        if (System.getProperty("type") != null) {
-            if (System.getProperty("type").equals("java")) {
-                System.out.println("Java static analysis started...");
-                System.out.println("qark --java " + path + "--report-path " + System.getProperty("user.dir") + "/");
-                process = Runtime.getRuntime().exec("qark --java " + path + "  --report-path " + System.getProperty("user.dir") + "/target/");
-            } else if (System.getProperty("type").equals("apk")) {
-                System.out.println("Apk static analysis started...");
-                System.out.println("qark --apk " + path + "  --report-path " + System.getProperty("user.dir") + "/target/");
-                process = Runtime.getRuntime().exec("qark --apk " + path + "  --report-path " + System.getProperty("user.dir") + "/target/");
+        if (type!= null) {
+            if (type.equals("java")) {
+                System.out.println("Java source code static analysis started...");
+                String commandLine = "qark --java " + path + "  --report-path " + System.getProperty("user.dir") + "/";
+                System.out.println(commandLine);
+                process = Runtime.getRuntime().exec(commandLine);
+            } else if (type.equals("apk")) {
+                System.out.println("Android Apk static analysis started...");
+                String commandLine = "qark --apk " + path + "  --report-path " + System.getProperty("user.dir") + "/";
+                System.out.println(commandLine);
+                process = Runtime.getRuntime().exec("qark --apk " + path + "  --report-path " + System.getProperty("user.dir") + "/");
             } else {
                 System.out.println("Incorrect file type parameter");
             }
